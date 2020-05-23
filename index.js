@@ -28,7 +28,7 @@ function getinputValue(id){
 }
 
 function saveMessage(title,deadline){
-    var newMessageRef=messageRef.push();
+    var newMessageRef=messagesRef.push();
     newMessageRef.set({
      title: title,
      deadline:deadline
