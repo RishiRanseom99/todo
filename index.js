@@ -10,7 +10,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
-var messagesRef=firebase.database().ref();
+var messagesRef= firebase.database().ref();
 document.getElementById('form').addEventListener('submit',submitform);
 
 function submitform(e){
