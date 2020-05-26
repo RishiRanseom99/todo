@@ -13,9 +13,22 @@ var firebaseConfig = {
 var messagesRef= firebase.database().ref('messages');
 messagesRef.on('value',getData,errData);
 
+var list = document.getElementById('tasks_list');
+
 function getData(data){
 
-console.log(data.val());
+var tasks=data.val();
+var keys=Object.keys(tasks);
+console.log(keys);
+for(var i=0;i<keys.length;i++){
+  var k=keys[i];
+  var title=tasks[k].title;
+  var deadline=tasks[k].deadline;
+  
+  var entry=document.createElement('li');
+  entry.appendChild(document.createTextNode(title+' : ' + deadline));
+  list.appendChild(entry);
+}
 }
 function errData(err){
 consol.log('error');
