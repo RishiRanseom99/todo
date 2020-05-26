@@ -11,16 +11,7 @@ var firebaseConfig = {
   // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 var messagesRef= firebase.database().ref('messages');
-messagesRef.on('value',getData,errData);
 
-function getData(data){
-
-console.log(data.val());
-}
-function errData(err){
-consol.log('error');
- consol.log(err);
-}
 document.getElementById('form').addEventListener('submit',submitform);
 
 function submitform(e){
