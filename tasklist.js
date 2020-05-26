@@ -8,12 +8,16 @@ var firebaseConfig = {
     appId: "1:703233572908:web:6739d6c4c488dc86f85189",
     measurementId: "G-PFH2MW6QV3"
   };
-  // Initialize Firebase
+  
  firebase.initializeApp(firebaseConfig);
-var database= firebase.database().ref('messages');
-database.on('value',getData,errData);
+var messagesRef= firebase.database().ref('messages');
+messagesRef.on('value',getData,errData);
 
 function getData(data){
 
 console.log(data.val());
+}
+function errData(err){
+consol.log('error');
+ consol.log(err);
 }
